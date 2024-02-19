@@ -76,7 +76,7 @@ Sample `.pre-commit-config.yaml`:
 ```yaml
 repos:
   - repo: https://github.com/venomlab/pyproject-pyupgrade
-    rev: v0.1.0
+    rev: v0.1.0a1
     hooks:
       - id: ppyupgrade
 ```

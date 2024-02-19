@@ -1,0 +1,64 @@
+[tool.poetry]
+name = "pyproject-pyupgrade"
+version = "0.1.0"
+description = "Pyupgrade wrapper to supply configuration via pyproject.toml"
+authors = ["Dmytro Selishchev <zibertscrem@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.scripts]
+pyproject-pyupgrade = "pyproject_pyupgrade.cli:cli"
+ppyupgrade = "pyproject_pyupgrade.cli:cli"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pyupgrade = "*"
+
+[tool.poetry.group.dev.dependencies]
+black = "~23.3.0"
+isort = "~5.11.5"
+flake8 = "~5.0.4"
+pyproject-flake8 = "~5.0.4"
+flake8-bugbear = "~23.3.12"
+flake8-quotes = "~3.4.0"
+flake8-bandit = "~4.1.1"
+flake8-print = "~5.0.0"
+flake8-builtins = "~2.1.0"
+flake8-eradicate = "~1.4.0"
+flake8-debugger = "~4.1.2"
+pep8-naming = "~0.13.3"
+pytest = "~7.4.4"
+mypy = "~1.4.1"
+
+[tool.pyright]
+venv = ".venv"
+venvPath = "."
+
+[tool.black]
+line-length = 120
+target-version = ["py37"]
+
+[tool.isort]
+profile = "black"
+line_length = 120
+
+[tool.flake8]
+max-line-length = 120
+inline-quotes = "double"
+ignore = ["B009", "B010", "W503", "S603", "S404"]
+per-file-ignores = ["tests/*: S101"]
+
+[tool.mypy]
+python_version = "3.7"
+strict = true
+
+[tool.pytest.ini_options]
+addopts = "-s"
+python_files = "tests/*.py"
+
+[tool.pyupgrade]
+py37-plus = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

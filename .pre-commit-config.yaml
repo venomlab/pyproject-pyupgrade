@@ -1,0 +1,50 @@
+default_stages: [commit]
+fail_fast: true
+repos:
+  - repo: local
+    hooks:
+      - id: pyupgrade
+        name: PyUpgrade
+        language: system
+        entry: poetry run pyupgrade --py37-plus
+        pass_filenames: true
+        types: ["python"]
+      - id: black
+        name: Black
+        language: system
+        entry: poetry run black
+        pass_filenames: true
+        types: ["python"]
+      - id: isort
+        name: iSort
+        language: system
+        entry: poetry run isort
+        pass_filenames: true
+        types: ["python"]
+      - id: flake8
+        name: Flake8
+        language: system
+        entry: poetry run pflake8
+        pass_filenames: true
+        types: ["python"]
+      - id: mypy
+        name: my[py]
+        language: system
+        entry: poetry run mypy
+        pass_filenames: true
+        types: ["python"]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-json
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: detect-private-key
+      - id: check-added-large-files
+      - id: check-ast
+      - id: check-symlinks
+      - id: forbid-new-submodules

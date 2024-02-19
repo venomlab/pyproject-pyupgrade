@@ -49,8 +49,7 @@ ppyupgrade [filename [filenames...]]
 
 So, basically you specify flags that you want to add to `pyupgrade`
 CLI arguments specifying them without leading two dashes (`--`).
-This is the way how you can supply any option that `pyupgrade` receives
-no matter which version of it you're using
+This is the way how you can supply any option that your version of `pyupgrade` receives
 
 There is also one additional parameter provided exclusively by `pyproject-pyupgrade` wrapper:
 
@@ -81,3 +80,14 @@ repos:
     hooks:
       - id: ppyupgrade
 ```
+
+## ToDo
+
+- [ ] Add tests and `tox` config to run them for all supported python versions
+- [ ] Add option to specify custom `pyupgrade` command. It allows in case if you want to chain pyupgrade wrappers (for instance, with [pyupgrade-directories](https://github.com/domdfcoding/pyupgrade-directories))
+- [ ] Add better parser for TOML. Right now the parser is ultra primitive and might lead to errors if used improperly
+- [ ] If `python` version >= `3.11` use tomllib for `pyproject.toml` parsing
+- [ ] Support adding custom options or key-value arguments to `pyupgrade` CLI
+- [ ] Support storing configuration in `pyupgrade.ini`
+- [ ] Support storing configuration in `tox.ini`
+- [ ] Support storing configuration in `setup.cfg`

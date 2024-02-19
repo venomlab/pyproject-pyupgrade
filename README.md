@@ -24,7 +24,7 @@ pipx install -f pyproject-pyupgrade
 
 ## Usage
 
-Make sure you have a desired version of [pyupgrade](https://github.com/asottile/pyupgrade)
+Make sure you have a desired version of `pyupgrade`
 installed in your python environment.
 
 Add the following section in your `pyproject.toml`:

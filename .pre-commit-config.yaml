@@ -1,14 +1,12 @@
 default_stages: [commit]
 fail_fast: true
 repos:
+  - repo: https://github.com/venomlab/pyproject-pyupgrade
+    rev: v0.1.0a1
+    hooks:
+      - id: ppyupgrade
   - repo: local
     hooks:
-      - id: pyupgrade
-        name: PyUpgrade
-        language: system
-        entry: poetry run pyupgrade --py37-plus
-        pass_filenames: true
-        types: ["python"]
       - id: black
         name: Black
         language: system

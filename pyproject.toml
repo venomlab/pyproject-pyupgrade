@@ -6,6 +6,9 @@ authors = ["Dmytro Selishchev <zibertscrem@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 
+[tool.poetry.urls]
+repository = "https://github.com/venomlab/pyproject-pyupgrade"
+
 [tool.poetry.scripts]
 pyproject-pyupgrade = "pyproject_pyupgrade.cli:cli"
 ppyupgrade = "pyproject_pyupgrade.cli:cli"

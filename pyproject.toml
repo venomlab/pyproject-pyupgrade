@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyproject-pyupgrade"
-version = "0.1.0a1"
+version = "0.1.0a2"
 description = "Pyupgrade wrapper to supply configuration via pyproject.toml"
 authors = ["Dmytro Selishchev <zibertscrem@gmail.com>"]
 license = "MIT"
